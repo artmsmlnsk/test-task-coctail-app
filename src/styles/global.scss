@@ -8,5 +8,13 @@ html,
 body {
 	height: 100%;
 	color: vars.$text-color;
-	background-color: vars.$background-color;
+	background-color: vars.$underlayer-bg-color;
+}
+
+#app {
+	height: 100%;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
