@@ -16,6 +16,7 @@
 		>
 			<CloseIcon />
 		</button>
+		<div v-else class="nav-header__close-placeholder"></div>
 	</header>
 </template>
 
@@ -34,6 +35,7 @@ const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 	justify-content: space-between;
 	width: 100%;
 	height: 56px;
+	min-height: 56px;
 	background: vars.$app-bg-color;
 	border-bottom: 1px solid vars.$border-color;
 	padding: 0 1rem;
@@ -44,11 +46,17 @@ const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 	&__close {
 		background: none;
 		border: none;
-		padding: 0.5rem;
+		padding: 8px;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		&-placeholder {
+			width: 40px;
+			height: 40px;
+			padding: 8px;
+		}
 	}
 
 	&__title {
