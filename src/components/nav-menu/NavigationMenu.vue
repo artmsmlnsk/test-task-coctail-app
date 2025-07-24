@@ -32,7 +32,7 @@ const isMobile = ref(false);
 const menuOpen = ref(false);
 
 function checkViewport() {
-	isMobile.value = window.innerWidth <= 480;
+	isMobile.value = window.innerWidth <= 768; // тут надо будет заиспользовать css переменную, и в variables.scss тоже
 	if (!isMobile.value) menuOpen.value = false;
 }
 

@@ -1,7 +1,7 @@
 <template>
 	<div class="app-layout">
 		<NavigationMenu />
-		<main>
+		<main class="app-layout__page-content">
 			<router-view />
 		</main>
 	</div>
@@ -20,9 +20,15 @@ import NavigationMenu from './components/nav-menu/NavigationMenu.vue';
 	width: 100%;
 	max-width: vars.$max-app-width;
 	min-width: vars.$min-app-width;
+	background-color: vars.$app-bg-color;
+	color: vars.$color;
+
+	&__page-content {
+		flex-grow: 1;
+	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: vars.$mobile-breakpoint) {
 	.app-layout {
 		flex-direction: column;
 	}

@@ -38,10 +38,12 @@ function onItemClick(item: MenuItem) {
 
 <style lang="scss">
 .navigation-list-menu {
-	width: 100%;
+	width: auto;
+	min-width: 180px;
 	max-width: 300px;
 	background: vars.$app-bg-color;
-	color: vars.$text-color;
+	border-right: 1px solid vars.$border-color;
+	color: vars.$color;
 	height: 100%;
 	position: relative;
 	z-index: 10;
@@ -61,7 +63,7 @@ function onItemClick(item: MenuItem) {
 	&__link {
 		display: block;
 		padding: 1rem 1.5rem;
-		color: vars.$text-color;
+		color: vars.$color;
 		text-decoration: none;
 		font-size: 1.1rem;
 		font-weight: 500;
@@ -74,7 +76,7 @@ function onItemClick(item: MenuItem) {
 		}
 		&--active {
 			color: vars.$app-bg-color;
-			background: vars.$text-color;
+			background: vars.$color;
 		}
 	}
 
@@ -82,7 +84,7 @@ function onItemClick(item: MenuItem) {
 		display: block;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: vars.$mobile-breakpoint) {
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -90,7 +92,6 @@ function onItemClick(item: MenuItem) {
 		height: 100dvh;
 		max-width: none;
 		background: vars.$app-bg-color;
-		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
 		padding-top: 56px;
 		.navigation-list-menu__list {
 			height: 100%;

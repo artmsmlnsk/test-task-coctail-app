@@ -35,7 +35,7 @@ const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 	width: 100%;
 	height: 56px;
 	background: vars.$app-bg-color;
-	border-bottom: 1px solid vars.$underlayer-bg-color;
+	border-bottom: 1px solid vars.$border-color;
 	padding: 0 1rem;
 	z-index: 1100;
 	position: relative;
@@ -54,7 +54,7 @@ const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 	&__title {
 		font-size: 1.3rem;
 		font-weight: 600;
-		color: vars.$text-color;
+		color: vars.$color;
 		flex: 1;
 		text-align: center;
 	}
