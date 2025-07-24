@@ -18,9 +18,9 @@ export const useCocktailsStore = defineStore('cocktails', () => {
 		kir: null,
 	});
 
-	async function fetchCocktail(cocktailCode: TCocktailCode) {
+	async function fetchCocktail(cocktailCode: TCocktailCode): Promise<void> {
 		if (cocktailStates[cocktailCode] && !cocktailStates[cocktailCode].error) {
-			return Promise.resolve(cocktailStates[cocktailCode]);
+			return;
 		}
 
 		cocktailStates[cocktailCode] = {
