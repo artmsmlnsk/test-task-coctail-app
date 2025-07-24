@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
 		redirect: `/${COCKTAIL_CODES[0]}`,
 	},
 	...cocktailRoutes,
+	{
+		path: '/:catchAll(.*)',
+		name: 'NotFound',
+		component: () => import('../views/NotFound.vue'),
+	},
 ];
 
 const router = createRouter({
