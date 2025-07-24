@@ -1,6 +1,6 @@
 <template>
 	<div class="image-wrapper">
-		<img v-if="src" :src="src" :alt="alt" @error="onError" />
+		<img v-if="src" :src="src" :alt="alt" @error="onError" loading="lazy" />
 		<div class="fallback">
 			<svg width="100%" height="100%" viewBox="0 0 200 200" fill="none">
 				<rect width="200" height="200" rx="16" fill="#e0e0e0" />
