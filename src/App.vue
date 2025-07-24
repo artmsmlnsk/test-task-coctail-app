@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import NavigationMenu from './components/NavigationMenu.vue';
+import NavigationMenu from './components/nav-menu/NavigationMenu.vue';
 </script>
 
 <style lang="scss">
@@ -20,5 +20,11 @@ import NavigationMenu from './components/NavigationMenu.vue';
 	width: 100%;
 	max-width: vars.$max-app-width;
 	min-width: vars.$min-app-width;
+}
+
+@media (max-width: 480px) {
+	.app-layout {
+		flex-direction: column;
+	}
 }
 </style>
