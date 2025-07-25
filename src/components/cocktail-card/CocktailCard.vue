@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import ImageWithFallback from './ImageWithFallback.vue';
+import ImageWithFallback from '../shared/ImageWithFallback.vue';
 import { ICocktail } from '../../types/ICocktail';
 
 const props = defineProps<{ cocktail: ICocktail }>();
