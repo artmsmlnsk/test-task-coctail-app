@@ -30,7 +30,6 @@ const cocktailState = computed(
 	() => store.cocktailStates[currentCocktailCode.value]
 );
 const cocktails = computed(() => cocktailState.value?.data ?? []);
-const loading = computed(() => cocktailState.value?.loading);
 const error = computed(() => cocktailState.value?.error);
 </script>
 

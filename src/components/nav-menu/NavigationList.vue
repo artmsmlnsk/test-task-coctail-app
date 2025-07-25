@@ -28,7 +28,7 @@ interface MenuItem {
 	key?: string | number;
 }
 
-const props = defineProps<{ items: MenuItem[] }>();
+const { items } = defineProps<{ items: MenuItem[] }>();
 const emit = defineEmits(['item-click']);
 
 function onItemClick(item: MenuItem) {

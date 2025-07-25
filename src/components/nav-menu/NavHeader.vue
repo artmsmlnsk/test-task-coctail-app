@@ -31,7 +31,10 @@ import BurgerIcon from '../shared/icons/BurgerIcon.vue';
 import CloseIcon from '../shared/icons/CloseIcon.vue';
 import SpaceKeeperButton from '../shared/buttons/SpaceKeeperButton.vue';
 
-const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
+const { isMobile, menuOpen } = defineProps<{
+	isMobile: boolean;
+	menuOpen: boolean;
+}>();
 </script>
 
 <style lang="scss">
