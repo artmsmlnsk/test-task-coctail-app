@@ -1,29 +1,35 @@
 <template>
 	<header class="nav-header" v-if="isMobile">
-		<button
-			class="nav-header__burger"
-			@click="$emit('burger-click')"
+		<SpaceKeeperButton
+			:size="40"
+			:visible="true"
 			aria-label="Open menu"
+			@click="$emit('burger-click')"
 		>
 			<BurgerIcon />
-		</button>
+		</SpaceKeeperButton>
 		<span class="nav-header__title">Cocktails</span>
-		<button
-			v-if="menuOpen"
-			class="nav-header__close"
-			@click="$emit('close-click')"
+		<SpaceKeeperButton
+			:size="40"
+			:visible="menuOpen"
 			aria-label="Close menu"
+			@click="$emit('close-click')"
 		>
 			<CloseIcon />
-		</button>
-		<div v-else class="nav-header__close-placeholder"></div>
+		</SpaceKeeperButton>
+		<SpaceKeeperButton
+			:size="40"
+			:visible="!menuOpen"
+			aria-label="Close menu placeholder"
+		/>
 	</header>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import BurgerIcon from './BurgerIcon.vue';
-import CloseIcon from './CloseIcon.vue';
+import BurgerIcon from '../shared/icons/BurgerIcon.vue';
+import CloseIcon from '../shared/icons/CloseIcon.vue';
+import SpaceKeeperButton from '../shared/buttons/SpaceKeeperButton.vue';
 
 const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 </script>
@@ -41,23 +47,6 @@ const props = defineProps<{ isMobile: boolean; menuOpen: boolean }>();
 	padding: 0 1rem;
 	z-index: 1100;
 	position: relative;
-
-	&__burger,
-	&__close {
-		background: none;
-		border: none;
-		padding: 8px;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&-placeholder {
-			width: 40px;
-			height: 40px;
-			padding: 8px;
-		}
-	}
 
 	&__title {
 		font-size: 1.3rem;
