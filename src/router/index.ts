@@ -35,7 +35,9 @@ router.beforeEach(async (to, from, next) => {
 		try {
 			const cocktailsStore = useCocktailsStore();
 			cocktailsStore.fetchCocktail(to.name as TCocktailCode);
-		} catch (error) {}
+		} catch (error) {
+			console.log('Error fetching cocktail data:', error);
+		}
 	}
 
 	next();

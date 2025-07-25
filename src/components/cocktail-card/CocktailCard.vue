@@ -44,7 +44,7 @@
 import ImageWithFallback from '../shared/ImageWithFallback.vue';
 import { ICocktail } from '../../types/ICocktail';
 
-const props = defineProps<{ cocktail: ICocktail }>();
+const { cocktail } = defineProps<{ cocktail: ICocktail }>();
 </script>
 
 <style lang="scss">
